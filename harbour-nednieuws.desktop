@@ -4,3 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-nednieuws
 Exec=sailfish-qml harbour-nednieuws
 Name=NedNieuws
+
+[X-Sailjail]
+OrganizationName=org.sanderklootwijk
+ApplicationName=nednieuws
+Permissions=Internet

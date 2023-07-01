@@ -9,14 +9,13 @@ Name:       harbour-nednieuws
 # << macros
 
 Summary:    NedNieuws
-Version:    1.2.1
+Version:    1.3.1
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    GPLv3
 BuildArch:  noarch
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
-Source100:  harbour-nednieuws.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher
 Requires:   qt5-qtdeclarative-import-xmllistmodel
@@ -28,7 +27,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  qt5-qtdeclarative-import-xmllistmodel
 
 %description
-Short description of my Sailfish OS Application
+Newsfeed from NOS (public Dutch broadcasting company)
 
 
 %prep

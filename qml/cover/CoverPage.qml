@@ -8,7 +8,7 @@ CoverBackground {
 
         // Link to feedListModel
         model: feedListModel
-        delegate: CoverDelegate{}
+        delegate: CoverDelegate {}
 
         // Dirty hack to show only first news item on cover
         spacing: Theme.paddingLarge * 20

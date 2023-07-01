@@ -22,7 +22,6 @@ DISTFILES += qml/harbour-nednieuws.qml \
     rpm/harbour-nednieuws.changes.in \
     rpm/harbour-nednieuws.changes.run.in \
     rpm/harbour-nednieuws.spec \
-    rpm/harbour-nednieuws.yaml \
     translations/*.ts \
     harbour-nednieuws.desktop
 

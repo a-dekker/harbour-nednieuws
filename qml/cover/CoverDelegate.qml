@@ -28,54 +28,20 @@ ListItem {
             font.pixelSize: Theme.fontSizeMedium / 1.2
             color: Theme.highlightColor
 
-            text: {
-                if (feedListModel.source == "https://feeds.feedburner.com/nosjournaal") {
-                    "Algemeen nieuws"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nossportalgemeen") {
-                    "Sportnieuws"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsbinnenland") {
-                    "Binnenland"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsbuitenland") {
-                    "Buitenland"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwspolitiek") {
-                    "Politiek"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwseconomie") {
-                    "Economie"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
-                    "Opmerkelijk"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwskoningshuis") {
-                    "Koningshuis"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
-                    "Cultuur & Media"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
-                    "Technologie"
-                }
-                else if (feedListModel.source == "https://feeds.feedburner.com/nosop3") {
-                    "NOS op 3"
-                }
-            }
+            text: generic.newsCategory
         }
 
         Image {
             id: containerImage
-            width: parent.width
-            height: width / 1.7
+            height: parent.width / 1.7
+            width: (generic.imageFactor == 1.0) ? height : parent.width
             anchors {
                 top: categoryLabel.bottom
                 topMargin: Theme.paddingMedium
                 horizontalCenter: parent.horizontalCenter
             }
 
-            source: image
+            source: generic.currentImage !== "" ? generic.currentImage : image
         }
 
         Label {
@@ -86,7 +52,7 @@ ListItem {
                 left: parent.left
             }
 
-            text: title
+            text: generic.currentTitle !== "" ? generic.currentTitle : title
 
             font.pixelSize: Theme.fontSizeExtraSmall / 1.1
             wrapMode: Text.WordWrap
@@ -102,7 +68,7 @@ ListItem {
                 left: parent.left
             }
 
-            text: pubDate
+            text: generic.currentPubDate !== "" ? generic.currentPubDate : pubDate
 
             font.pixelSize: Theme.fontSizeExtraSmall / 1.5
             color: Theme.highlightColor

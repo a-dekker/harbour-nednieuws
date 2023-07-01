@@ -20,7 +20,7 @@ ListItem {
 
         Image {
             id: containerImage
-            width: height * 1.7
+            width: height * generic.imageFactor
             height: parent.height
             anchors {
                 top: parent.top
@@ -48,135 +48,162 @@ ListItem {
 
     onClicked: {
         //Workaround: add extra return and > sign to sport articles, as they don't exist in some feeds
-        if (feedListModel.source == "https://feeds.feedburner.com/nossportalgemeen") {
+        if (feedListModel.source == "https://www.nu.nl/rss/Algemeen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwspolitiek") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nossportalgemeen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwseconomie") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwspolitiek") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwseconomie") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "http://feeds.nos.nl/nosvoetbal") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "http://feeds.nos.nl/nossportformule1") {
+        } else if (feedListModel.source == "http://feeds.nos.nl/nosvoetbal") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "http://feeds.nos.nl/nossportwielrennen") {
+        } else if (feedListModel.source == "http://feeds.nos.nl/nossportformule1") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstech") {
+        } else if (feedListModel.source == "http://feeds.nos.nl/nossportwielrennen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else if (feedListModel.source == "http://feeds.nos.nl/nieuwsuuralgemeen") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstech") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        }
-        else {
+        } else if (feedListModel.source == "http://feeds.nos.nl/nieuwsuuralgemeen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
             articleDate.text = pubDate
             articleImage.source = image
-            articleContent.text = content + ' <a href="' + link + '"><font color="' + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
+            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
+                    + '"><font color="' + Theme.highlightColor
+                    + '">Open dit artikel in uw browser</font></a>'
+            pageStack.push(articlePage)
+        } else {
+            //first scroll to top
+            columnFlickable.contentY = 0
+            //then add new information
+            articleTitle.text = title
+            articleDate.text = pubDate
+            articleImage.source = image
+            articleContent.text = content + ' <a href="' + link + '"><font color="'
+                    + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
         }
+        generic.currentImage = image
+        generic.currentTitle = title
+        generic.currentPubDate = pubDate
     }
 }
