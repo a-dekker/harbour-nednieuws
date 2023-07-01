@@ -92,17 +92,6 @@ ListItem {
                     + '"><font color="' + Theme.highlightColor
                     + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
-            //first scroll to top
-            columnFlickable.contentY = 0
-            //then add new information
-            articleTitle.text = title
-            articleDate.text = pubDate
-            articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
-                    + '"><font color="' + Theme.highlightColor
-                    + '">Open dit artikel in uw browser</font></a>'
-            pageStack.push(articlePage)
         } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
             //first scroll to top
             columnFlickable.contentY = 0
@@ -115,17 +104,6 @@ ListItem {
                     + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
         } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
-            //first scroll to top
-            columnFlickable.contentY = 0
-            //then add new information
-            articleTitle.text = title
-            articleDate.text = pubDate
-            articleImage.source = image
-            articleContent.text = content + '<br>&nbsp;&nbsp;> <a href="' + link
-                    + '"><font color="' + Theme.highlightColor
-                    + '">Open dit artikel in uw browser</font></a>'
-            pageStack.push(articlePage)
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information

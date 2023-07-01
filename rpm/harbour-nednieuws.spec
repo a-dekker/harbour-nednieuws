@@ -10,7 +10,7 @@ Name:       harbour-nednieuws
 
 Summary:    NedNieuws
 Version:    1.3.1
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPLv3
 BuildArch:  noarch

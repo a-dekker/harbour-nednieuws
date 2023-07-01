@@ -28,6 +28,7 @@ Page {
     }
 
     function setCategory() {
+        console.log(feedListModel.source)
         if (feedListModel.source == "https://www.nu.nl/rss/Algemeen") {
             generic.newsCategory = "NU.nl Algemeen nieuws"
         } else if (feedListModel.source == "https://feeds.feedburner.com/nosjournaal") {
@@ -52,10 +53,10 @@ Page {
             generic.newsCategory = "Schaatsen"
         } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwskoningshuis") {
             generic.newsCategory = "Koningshuis"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstechnologie") {
+        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstech") {
             generic.newsCategory = "Technologie"
         } else if (feedListModel.source
-                   === "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
+                   == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
             generic.newsCategory = "Cultuur & Media"
         } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
             generic.newsCategory = "Opmerkelijk"
