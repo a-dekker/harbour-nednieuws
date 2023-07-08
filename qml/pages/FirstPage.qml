@@ -116,7 +116,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosjournaal"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -148,7 +148,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://www.nu.nl/rss/Algemeen"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.0
                     setCategory()
 
@@ -180,7 +180,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwsbinnenland"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -212,7 +212,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwsbuitenland"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -244,7 +244,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwspolitiek"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -276,7 +276,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwseconomie"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -308,7 +308,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nossportalgemeen"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -340,7 +340,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "http://feeds.nos.nl/nosvoetbal"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -372,7 +372,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "http://feeds.nos.nl/nossportformule1"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -404,7 +404,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "http://feeds.nos.nl/nossportwielrennen"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -436,7 +436,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "http://feeds.nos.nl/nossportschaatsen"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -468,7 +468,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwskoningshuis"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -500,7 +500,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwstech"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -532,7 +532,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwscultuurenmedia"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -564,7 +564,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosnieuwsopmerkelijk"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -596,7 +596,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "http://feeds.nos.nl/nieuwsuuralgemeen"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -628,7 +628,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/nosop3"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -660,7 +660,7 @@ Page {
                 onClicked: {
                     // load new feed
                     feedListModel.source = "https://feeds.feedburner.com/jeugdjournaal"
-                    feedListModel.reload
+                    feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
 
@@ -695,7 +695,7 @@ Page {
                 MenuItem {
                     text: "Ververs"
                     onClicked: {
-                        feedListModel.reload
+                        feedListModel.reload()
                     }
                 }
             }
