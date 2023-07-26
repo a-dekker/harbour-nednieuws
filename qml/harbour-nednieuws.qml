@@ -20,7 +20,7 @@ ApplicationWindow {
 
     XmlListModel {
         id: feedListModel
-        source: "https://feeds.feedburner.com/nosjournaal"
+        source: "https://feeds.nos.nl/nosnieuwsalgemeen"
         query: "/rss/channel/item"
 
         namespaceDeclarations: "declare namespace dc='http://purl.org/dc/elements/1.1/'; declare namespace content='http://purl.org/rss/1.0/modules/content/';"

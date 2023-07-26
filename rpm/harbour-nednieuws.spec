@@ -9,8 +9,8 @@ Name:       harbour-nednieuws
 # << macros
 
 Summary:    NedNieuws
-Version:    1.3.1
-Release:    3
+Version:    1.3.2
+Release:    1
 Group:      Qt/Qt
 License:    GPLv3
 BuildArch:  noarch

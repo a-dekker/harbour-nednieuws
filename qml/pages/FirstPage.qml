@@ -31,17 +31,17 @@ Page {
         console.log(feedListModel.source)
         if (feedListModel.source == "https://www.nu.nl/rss/Algemeen") {
             generic.newsCategory = "NU.nl Algemeen nieuws"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosjournaal") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsalgemeen") {
             generic.newsCategory = "Algemeen nieuws"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsbinnenland") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsbuitenland") {
             generic.newsCategory = "Binnenland"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsbuitenland") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsbuitenland") {
             generic.newsCategory = "Buitenland"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwspolitiek") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwspolitiek") {
             generic.newsCategory = "Politiek"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwseconomie") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwseconomie") {
             generic.newsCategory = "Economie"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nossportalgemeen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportalgemeen") {
             generic.newsCategory = "Sportnieuws"
         } else if (feedListModel.source == "http://feeds.nos.nl/nosvoetbal") {
             generic.newsCategory = "Voetbal"
@@ -51,20 +51,19 @@ Page {
             generic.newsCategory = "Wielrennen"
         } else if (feedListModel.source == "http://feeds.nos.nl/nossportschaatsen") {
             generic.newsCategory = "Schaatsen"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwskoningshuis") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwskoningshuis") {
             generic.newsCategory = "Koningshuis"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwstech") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwstech") {
             generic.newsCategory = "Technologie"
-        } else if (feedListModel.source
-                   == "https://feeds.feedburner.com/nosnieuwscultuurenmedia") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwscultuurenmedia") {
             generic.newsCategory = "Cultuur & Media"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosnieuwsopmerkelijk") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsopmerkelijk") {
             generic.newsCategory = "Opmerkelijk"
         } else if (feedListModel.source == "http://feeds.nos.nl/nieuwsuuralgemeen") {
             generic.newsCategory = "Nieuwsuur"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/nosop3") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosop3") {
             generic.newsCategory = "NOS op 3"
-        } else if (feedListModel.source == "https://feeds.feedburner.com/jeugdjournaal") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/jeugdjournaal") {
             generic.newsCategory = "Jeugdjournaal"
         }
         currentImage = ""
@@ -115,41 +114,9 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosjournaal"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwsalgemeen"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // NU.nl - Algemeen
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "NU.nl - Algemeen"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "https://www.nu.nl/rss/Algemeen"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.0
                     setCategory()
 
                     // scroll to top
@@ -179,7 +146,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwsbinnenland"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwsbinnenland"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -211,7 +178,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwsbuitenland"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwsbuitenland"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -224,7 +191,7 @@ Page {
                 }
             }
 
-            // Politiek
+            // Cultuur & Media
             ListItem {
                 contentHeight: Theme.itemSizeExtraSmall
 
@@ -235,7 +202,7 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
 
-                    text: "Politiek"
+                    text: "Cultuur & Media"
                     font.pixelSize: Theme.fontSizeMedium
                     wrapMode: Text.WordWrap
                     truncationMode: TruncationMode.Fade
@@ -243,7 +210,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwspolitiek"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwscultuurenmedia"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -275,71 +242,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwseconomie"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Sport
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Sport"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nossportalgemeen"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Voetbal
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Voetbal"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nosvoetbal"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwseconomie"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -384,7 +287,7 @@ Page {
                 }
             }
 
-            // Wielrennen
+            // Jeugdjournaal
             ListItem {
                 contentHeight: Theme.itemSizeExtraSmall
 
@@ -395,7 +298,7 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
 
-                    text: "Wielrennen"
+                    text: "Jeugdjournaal"
                     font.pixelSize: Theme.fontSizeMedium
                     wrapMode: Text.WordWrap
                     truncationMode: TruncationMode.Fade
@@ -403,39 +306,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nossportwielrennen"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Schaatsen
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Schaatsen"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nossportschaatsen"
+                    feedListModel.source = "https://feeds.nos.nl/jeugdjournaal"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -467,103 +338,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwskoningshuis"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Technologie
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Technologie"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwstech"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Cultuur & Media
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Cultuur & Media"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwscultuurenmedia"
-                    feedListModel.reload()
-                    generic.imageFactor = 1.7
-                    setCategory()
-
-                    // scroll to top
-                    listView.scrollToTop()
-
-                    // go back to previous page
-                    pageStack.push(mainPage)
-                }
-            }
-
-            // Opmerkelijk
-            ListItem {
-                contentHeight: Theme.itemSizeExtraSmall
-
-                Label {
-                    anchors {
-                        left: parent.left
-                        leftMargin: Theme.paddingLarge
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: "Opmerkelijk"
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.WordWrap
-                    truncationMode: TruncationMode.Fade
-                }
-
-                onClicked: {
-                    // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosnieuwsopmerkelijk"
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwskoningshuis"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -627,7 +402,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/nosop3"
+                    feedListModel.source = "https://feeds.nos.nl/nosop3"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -640,7 +415,7 @@ Page {
                 }
             }
 
-            // Jeugdjournaal
+            // NU.nl - Algemeen
             ListItem {
                 contentHeight: Theme.itemSizeExtraSmall
 
@@ -651,7 +426,7 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
 
-                    text: "Jeugdjournaal"
+                    text: "NU.nl - Algemeen"
                     font.pixelSize: Theme.fontSizeMedium
                     wrapMode: Text.WordWrap
                     truncationMode: TruncationMode.Fade
@@ -659,7 +434,231 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "https://feeds.feedburner.com/jeugdjournaal"
+                    feedListModel.source = "https://www.nu.nl/rss/Algemeen"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.0
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Opmerkelijk
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Opmerkelijk"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwsopmerkelijk"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Politiek
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Politiek"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwspolitiek"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Schaatsen
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Schaatsen"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "http://feeds.nos.nl/nossportschaatsen"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Sport
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Sport"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "https://feeds.nos.nl/nossportalgemeen"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Technologie
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Technologie"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "https://feeds.nos.nl/nosnieuwstech"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Voetbal
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Voetbal"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "http://feeds.nos.nl/nosvoetbal"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
+            // Wielrennen
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Wielrennen"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "http://feeds.nos.nl/nossportwielrennen"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
