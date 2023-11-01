@@ -33,7 +33,7 @@ Page {
             generic.newsCategory = "NU.nl Algemeen nieuws"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsalgemeen") {
             generic.newsCategory = "Algemeen nieuws"
-        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsbuitenland") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsbinnenland") {
             generic.newsCategory = "Binnenland"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsbuitenland") {
             generic.newsCategory = "Buitenland"
@@ -43,14 +43,16 @@ Page {
             generic.newsCategory = "Economie"
         } else if (feedListModel.source == "https://feeds.nos.nl/nossportalgemeen") {
             generic.newsCategory = "Sportnieuws"
-        } else if (feedListModel.source == "http://feeds.nos.nl/nosvoetbal") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosvoetbal") {
             generic.newsCategory = "Voetbal"
-        } else if (feedListModel.source == "http://feeds.nos.nl/nossportformule1") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportformule1") {
             generic.newsCategory = "Formule 1"
-        } else if (feedListModel.source == "http://feeds.nos.nl/nossportwielrennen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportwielrennen") {
             generic.newsCategory = "Wielrennen"
-        } else if (feedListModel.source == "http://feeds.nos.nl/nossportschaatsen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportschaatsen") {
             generic.newsCategory = "Schaatsen"
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossporttennis") {
+            generic.newsCategory = "Tennis"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwskoningshuis") {
             generic.newsCategory = "Koningshuis"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwstech") {
@@ -59,7 +61,7 @@ Page {
             generic.newsCategory = "Cultuur & Media"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosnieuwsopmerkelijk") {
             generic.newsCategory = "Opmerkelijk"
-        } else if (feedListModel.source == "http://feeds.nos.nl/nieuwsuuralgemeen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nieuwsuuralgemeen") {
             generic.newsCategory = "Nieuwsuur"
         } else if (feedListModel.source == "https://feeds.nos.nl/nosop3") {
             generic.newsCategory = "NOS op 3"
@@ -274,7 +276,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nossportformule1"
+                    feedListModel.source = "https://feeds.nos.nl/nossportformule1"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -370,7 +372,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nieuwsuuralgemeen"
+                    feedListModel.source = "https://feeds.nos.nl/nieuwsuuralgemeen"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -530,7 +532,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nossportschaatsen"
+                    feedListModel.source = "https://feeds.nos.nl/nossportschaatsen"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -607,6 +609,38 @@ Page {
                 }
             }
 
+            // Tennis
+            ListItem {
+                contentHeight: Theme.itemSizeExtraSmall
+
+                Label {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    text: "Tennis"
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
+
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = "https://feeds.nos.nl/nossporttennis"
+                    feedListModel.reload()
+                    generic.imageFactor = 1.7
+                    setCategory()
+
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
+                }
+            }
+
             // Voetbal
             ListItem {
                 contentHeight: Theme.itemSizeExtraSmall
@@ -626,7 +660,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nosvoetbal"
+                    feedListModel.source = "https://feeds.nos.nl/nosvoetbal"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()
@@ -658,7 +692,7 @@ Page {
 
                 onClicked: {
                     // load new feed
-                    feedListModel.source = "http://feeds.nos.nl/nossportwielrennen"
+                    feedListModel.source = "https://feeds.nos.nl/nossportwielrennen"
                     feedListModel.reload()
                     generic.imageFactor = 1.7
                     setCategory()

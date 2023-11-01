@@ -120,7 +120,7 @@ ListItem {
                         "</h2>\n") + '<br>&nbsp;&nbsp; <a href="' + link + '"><font color="'
                     + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        } else if (feedListModel.source == "http://feeds.nos.nl/nosvoetbal") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nosvoetbal") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
@@ -132,7 +132,7 @@ ListItem {
                         "</h2>\n") + '<br>&nbsp;&nbsp; <a href="' + link + '"><font color="'
                     + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        } else if (feedListModel.source == "http://feeds.nos.nl/nossportformule1") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportformule1") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
@@ -144,7 +144,7 @@ ListItem {
                         "</h2>\n") + '<br>&nbsp;&nbsp; <a href="' + link + '"><font color="'
                     + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        } else if (feedListModel.source == "http://feeds.nos.nl/nossportwielrennen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nossportwielrennen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
@@ -168,7 +168,7 @@ ListItem {
                         "</h2>\n") + '<br>&nbsp;&nbsp; <a href="' + link + '"><font color="'
                     + Theme.highlightColor + '">Open dit artikel in uw browser</font></a>'
             pageStack.push(articlePage)
-        } else if (feedListModel.source == "http://feeds.nos.nl/nieuwsuuralgemeen") {
+        } else if (feedListModel.source == "https://feeds.nos.nl/nieuwsuuralgemeen") {
             //first scroll to top
             columnFlickable.contentY = 0
             //then add new information
