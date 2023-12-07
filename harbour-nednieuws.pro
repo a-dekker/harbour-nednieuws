@@ -19,6 +19,7 @@ DISTFILES += qml/harbour-nednieuws.qml \
     qml/cover/CoverPage.qml \
     qml/pages/ArticleDelegate.qml \
     qml/pages/FirstPage.qml \
+    qml/img/*.svg \
     rpm/harbour-nednieuws.changes.in \
     rpm/harbour-nednieuws.changes.run.in \
     rpm/harbour-nednieuws.spec \

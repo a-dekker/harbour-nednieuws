@@ -9,7 +9,7 @@ Name:       harbour-nednieuws
 # << macros
 
 Summary:    NedNieuws
-Version:    1.3.3
+Version:    1.3.4
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
