@@ -68,7 +68,7 @@ ListItem {
                 left: parent.left
             }
 
-            text: generic.currentPubDate !== "" ? generic.currentPubDate : pubDate
+            text: generic.currentPubDate !== "" ? generic.currentPubDate : date2dutch(pubDate)
 
             font.pixelSize: Theme.fontSizeExtraSmall / 1.5
             color: Theme.highlightColor
