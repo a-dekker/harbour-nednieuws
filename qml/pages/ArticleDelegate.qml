@@ -42,8 +42,25 @@ ListItem {
             text: title
             font.pixelSize: Theme.fontSizeExtraSmall * 1.1
             wrapMode: Text.WordWrap
-            truncationMode: TruncationMode.Fade
         }
+    }
+    function date2dutch(pubDate) {
+        // translate dow
+        var pubDateTranslated = pubDate.replace("Sun,", "Zondag")
+        pubDateTranslated = pubDateTranslated.replace("Mon,", "Maandag")
+        pubDateTranslated = pubDateTranslated.replace("Tue,", "Dinsdag")
+        pubDateTranslated = pubDateTranslated.replace("Wed,", "Woensdag")
+        pubDateTranslated = pubDateTranslated.replace("Thu,", "Donderdag")
+        pubDateTranslated = pubDateTranslated.replace("Fri,", "Vrijdag")
+        pubDateTranslated = pubDateTranslated.replace("Sat,", "Zaterdag")
+        // translate necessary months
+        pubDateTranslated = pubDateTranslated.replace("Mar", "Maart")
+        pubDateTranslated = pubDateTranslated.replace("May", "Mei")
+        pubDateTranslated = pubDateTranslated.replace("Oct", "Okt")
+        //remove seconds
+        pubDateTranslated = pubDateTranslated.replace(/:([0-9]{2}) /g, " ")
+        // replace offset by CEST
+        return pubDateTranslated.replace(/\+(.+)/g, "CEST")
     }
 
     onClicked: {
@@ -53,7 +70,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -65,7 +82,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -77,7 +94,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -89,7 +106,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -101,7 +118,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -113,7 +130,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -125,7 +142,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -137,7 +154,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -149,7 +166,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -161,7 +178,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -173,7 +190,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -185,7 +202,7 @@ ListItem {
             columnFlickable.contentY = 0
             //then add new information
             articleTitle.text = title
-            articleDate.text = pubDate
+            articleDate.text = date2dutch(pubDate)
             articleImage.source = image
             articleContent.text = content.replace(/<\/p>/g, "</p>\n").replace(
                         /<\/h2>/g,
@@ -195,6 +212,6 @@ ListItem {
         }
         generic.currentImage = image
         generic.currentTitle = title
-        generic.currentPubDate = pubDate
+        generic.currentPubDate = date2dutch(pubDate)
     }
 }
