@@ -36,6 +36,7 @@ ApplicationWindow {
     }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
+    _defaultPageOrientations: defaultAllowedOrientations
 
     XmlListModel {
         id: feedListModel

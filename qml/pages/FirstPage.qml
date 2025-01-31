@@ -333,8 +333,6 @@ Page {
         Page {
             id: imagePopup
 
-            allowedOrientations: Orientation.All
-
             // Image popup
             Rectangle {
                 anchors.fill: parent
