@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 ListItem {
     id: container
     contentHeight: Theme.itemSizeHuge
+    width: listView.cellWidth
 
     Text {
         id: imageSource

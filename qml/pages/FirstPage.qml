@@ -8,6 +8,8 @@ Page {
     // First Page, this is the category page; this page cointains all categories and gets pushed as initial page. After the app starts, it automatically pushes te mainPage from here
 
     // After te firstPage is pushed, this timer starts running and pushes te mainPage and activates te visibleTimer
+    property real screenRatio: Screen.height / Screen.width
+
     Timer {
         interval: 0
         running: true
@@ -177,20 +179,17 @@ Page {
     SilicaFlickable {
         id: categoryColumnFlickable
         anchors.fill: parent
-        VerticalScrollDecorator {}
 
         // Set visibility to false to make the start look cleaner
         visible: false
 
-        contentHeight: categoryColumn.height
-
-        Column {
+        SilicaGridView {
             id: categoryColumn
+            anchors.fill: parent
+            cellWidth: isPortrait ? parent.width : parent.width / 2
 
-            width: parent.width
-            spacing: Theme.paddingSmall
-
-            PageHeader {
+            VerticalScrollDecorator {}
+            header: PageHeader {
                 anchors {
                     rightMargin: Theme.paddingSmall
                 }
@@ -198,61 +197,76 @@ Page {
                 title: "Categorieën"
             }
 
-            Repeater {
-                model: mainCategoryModel
-                ListItem {
-                    contentHeight: Theme.itemSizeExtraSmall
+            delegate: ListItem {
+                width: isPortrait ? parent.width : parent.width / 2
 
-                    HighlightImage {
-                        anchors {
-                            left: parent.left
-                            leftMargin: Theme.paddingLarge
-                            verticalCenter: parent.verticalCenter
-                        }
-                        id: categoryIcon
-                        source: "../img/" + categorie + ".svg"
-                        height: categoryText.height
-                        width: height
-                        color: Theme.primaryColor
+                HighlightImage {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
                     }
-                    Label {
-                        id: categoryText
-                        anchors {
-                            left: categoryIcon.right
-                            leftMargin: Theme.paddingLarge
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        text: categorie
-                        font.pixelSize: Theme.fontSizeMedium
-                        wrapMode: Text.WordWrap
-                        truncationMode: TruncationMode.Fade
+                    id: categoryIcon
+                    source: "../img/" + categorie + ".svg"
+                    height: categoryText.height
+                    width: height
+                    color: Theme.primaryColor
+                }
+                Label {
+                    id: categoryText
+                    anchors {
+                        left: categoryIcon.right
+                        leftMargin: Theme.paddingLarge
+                        verticalCenter: parent.verticalCenter
                     }
 
-                    onClicked: {
-                        // load new feed
-                        feedListModel.source = feed_source
-                        feedListModel.reload()
-                        generic.imageFactor = image_factor
-                        setCategory()
+                    text: categorie
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.WordWrap
+                    truncationMode: TruncationMode.Fade
+                }
 
-                        // scroll to top
-                        listView.scrollToTop()
+                onClicked: {
+                    // load new feed
+                    feedListModel.source = feed_source
+                    feedListModel.reload()
+                    generic.imageFactor = image_factor
+                    setCategory()
 
-                        // go back to previous page
-                        pageStack.push(mainPage)
-                    }
+                    // scroll to top
+                    listView.scrollToTop()
+
+                    // go back to previous page
+                    pageStack.push(mainPage)
                 }
             }
+            model: mainCategoryModel
         }
     }
 
     Page {
         id: mainPage
 
-        SilicaListView {
+        // For some reason screen rotations are not detected in the ArticleDelegate
+        // So we use explicitly updating cellWidth as a bad hack
+        // And article Grid layout on devices with screenRatio < 2 gives issues,
+        // so we stay at 1 column there
+        onOrientationChanged: {
+            if (isLandscape && screenRatio >= 2) {
+                listView.cellWidth = mainPage.width / 2
+            }
+            if (isPortrait && screenRatio >= 2) {
+                listView.cellWidth = mainPage.width
+            }
+        }
+
+        SilicaGridView {
             id: listView
             anchors.fill: parent
+            cellWidth: isLandscape
+                       && screenRatio >= 2 ? parent.width / 2 : parent.width
+            cellHeight: Theme.paddingLarge * 8
+            //cellHeight: container.height
             header: PageHeader {
                 id: pageHeader
                 title: generic.newsCategory
